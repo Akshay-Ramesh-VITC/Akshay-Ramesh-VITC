@@ -14,7 +14,7 @@
 
 ### 🚀 Featured AI/ML Projects
 <a href="https://github.com/Akshay-Ramesh-VITC/heart-disease-platform">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Akshay-Ramesh-VITC&repo=heart-disease-platform&theme=shadow_blue" />
+  <img align="center" src="https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=Akshay-Ramesh-VITC&repo=heart-disease-platform&theme=shadow_blue" />
 </a>
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
