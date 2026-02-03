@@ -15,23 +15,12 @@
 <!-- FEATURED_PROJECTS_START -->
 ### 🚀 Featured AI/ML Projects
 
-<div align="center">
+| Project | Description | Language | Privacy | Stars |
+|---------|-------------|----------|---------|-------|
+| [Basic-Python-Programs](https://github.com/Akshay-Ramesh-VITC/Basic-Python-Programs) | This repository will contain basic python programming que... | ![Python](https://img.shields.io/badge/Python-informational?style=flat&logo=python&logoColor=white&color=2bbc8a) | 🌐 Public | ⭐ 0 |
+| [heart-disease-platform](https://github.com/Akshay-Ramesh-VITC/heart-disease-platform) | AI/ML Project | ![Python](https://img.shields.io/badge/Python-informational?style=flat&logo=python&logoColor=white&color=2bbc8a) | 🌐 Public | ⭐ 0 |
 
-<a href="https://github.com/Akshay-Ramesh-VITC/heart-disease-platform">
-  <img src="https://img.shields.io/badge/heart_disease_platform-Python-red?style=for-the-badge&logo=github" alt="heart-disease-platform" />
-</a>
-<br/>
-<sub>🌐_Public • ⭐ 0 • AI/ML Project</sub>
-
-<a href="https://github.com/Akshay-Ramesh-VITC/Basic-Python-Programs">
-  <img src="https://img.shields.io/badge/Basic_Python_Programs-Python-blue?style=for-the-badge&logo=github" alt="Basic-Python-Programs" />
-</a>
-<br/>
-<sub>🌐_Public • ⭐ 0 • This repository will contain basic python progr...</sub>
-
-</div>
-
-*🤖 Auto-updated: 2026-02-03 04:36 UTC | Showing 2 AI/ML projects*
+*🤖 Auto-updated: 2026-02-03 04:39 UTC • Showing 2 AI/ML projects (0 private, 2 public)*
 <!-- FEATURED_PROJECTS_END -->
 
 <!-- Last auto-update: 2026-02-03 04:11:33 UTC -->
