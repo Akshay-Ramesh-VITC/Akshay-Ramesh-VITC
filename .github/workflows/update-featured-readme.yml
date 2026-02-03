@@ -75,13 +75,13 @@ jobs:
               'deep-learning', 'neural-network', 'tensorflow', 'pytorch',
               'computer-vision', 'nlp', 'data-science', 'kaggle',
               'classification', 'regression', 'clustering', 'prediction',
-              'heart', 'disease', 'medical', 'health'
+              'heart', 'disease', 'medical', 'health', 'platform'
           ]
 
           featured_repos = []
           
           for repo in all_repos:
-              repo_name_lower = repo['name'].lower()
+              repo_name_lower = repo.get('name', '').lower()
               description_lower = (repo.get('description') or '').lower()
               topics = repo.get('topics', [])
               
@@ -97,15 +97,16 @@ jobs:
 
           # Sort by stars and updates
           featured_repos.sort(
-              key=lambda x: (x['stargazers_count'], x['updated_at']), 
+              key=lambda x: (x.get('stargazers_count', 0), x.get('updated_at', '')), 
               reverse=True
           )
           featured_repos = featured_repos[:6]
 
           print(f"\nFeatured repositories:")
           for repo in featured_repos:
-              privacy = "🔒 PRIVATE" if repo['private'] else "🌐 Public"
-              print(f"  - {repo['name']} ({privacy}) ⭐{repo['stargazers_count']}")
+              privacy = "🔒 PRIVATE" if repo.get('private', False) else "🌐 Public"
+              stars = repo.get('stargazers_count', 0)
+              print(f"  - {repo.get('name', 'Unknown')} ({privacy}) ⭐{stars}")
 
           # Generate markdown with custom badges
           projects_md = "### 🚀 Featured AI/ML Projects\n\n"
@@ -115,18 +116,21 @@ jobs:
           colors = ['red', 'blue', 'green', 'purple', 'orange', 'pink']
           
           for idx, repo in enumerate(featured_repos):
-              repo_name = repo['name']
-              repo_url = repo['html_url']
-              description = repo.get('description', 'AI/ML Project')[:50]
-              language = repo.get('language', 'Python')
-              stars = repo['stargazers_count']
-              is_private = repo['private']
+              repo_name = repo.get('name', 'Unknown')
+              repo_url = repo.get('html_url', '#')
+              description = (repo.get('description') or 'AI/ML Project')
+              # Truncate description safely
+              if len(description) > 50:
+                  description = description[:47] + '...'
+              language = repo.get('language') or 'Python'
+              stars = repo.get('stargazers_count', 0)
+              is_private = repo.get('private', False)
               color = colors[idx % len(colors)]
               
               # Privacy badge
               privacy_badge = "🔒_Private" if is_private else "🌐_Public"
               
-              # Create custom badge
+              # Create custom badge - escape special characters
               badge_label = repo_name.replace('-', '_').replace(' ', '_')
               badge_url = f"https://img.shields.io/badge/{badge_label}-{language}-{color}?style=for-the-badge&logo=github"
               
@@ -137,13 +141,15 @@ jobs:
               projects_md += f'<sub>{privacy_badge} • ⭐ {stars} • {description}</sub>\n\n'
 
           projects_md += "</div>\n\n"
-          projects_md += f"*🤖 Auto-updated: {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')}*\n"
+          projects_md += f"*🤖 Auto-updated: {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')} | Showing {len(featured_repos)} AI/ML projects*\n"
 
           # Save to file
           with open('featured_projects.md', 'w', encoding='utf-8') as f:
               f.write(projects_md)
 
           print("\n" + "="*50)
+          print("Generated markdown:")
+          print("="*50)
           print(projects_md)
           print("="*50)
 
@@ -151,13 +157,14 @@ jobs:
 
       - name: Update README
         run: |
-          if grep -q "<!-- FEATURED_PROJECTS_START -->" README.md; then
+          if grep -q "<!-- FEATURED_PROJECTS_START -->" README.md && grep -q "<!-- FEATURED_PROJECTS_END -->" README.md; then
             sed -n '1,/<!-- FEATURED_PROJECTS_START -->/p' README.md > temp_readme.md
             cat featured_projects.md >> temp_readme.md
             sed -n '/<!-- FEATURED_PROJECTS_END -->/,$p' README.md >> temp_readme.md
             mv temp_readme.md README.md
+            echo "✅ README updated successfully"
           else
-            echo "Error: Markers not found"
+            echo "❌ Error: Markers not found in README.md"
             exit 1
           fi
 
@@ -166,4 +173,19 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "GitHub Actions Bot"
           git add README.md
-          git diff --staged --quiet || (git commit -m "🚀 Update featured projects [$(date +'%Y-%m-%d')]" && git push)
+          
+          if git diff --staged --quiet; then
+            echo "✅ No changes to commit"
+          else
+            git commit -m "🚀 Auto-update featured AI/ML projects [$(date +'%Y-%m-%d %H:%M')]"
+            git push
+            echo "✅ Changes pushed successfully"
+          fi
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "### 🎉 Workflow Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Workflow completed" >> $GITHUB_STEP_SUMMARY
+          echo "📅 Updated: $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
