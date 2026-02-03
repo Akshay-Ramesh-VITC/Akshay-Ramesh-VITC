@@ -7,7 +7,7 @@ on:
   push:
     branches: [main]
     paths:
-      - '.github/workflows/update-featured-projects.yml'
+      - '.github/workflows/update-featured-readme.yml'
 
 jobs:
   update-featured-projects:
@@ -36,7 +36,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           USERNAME: Akshay-Ramesh-VITC
         run: |
-          python3 << 'PYTHON_SCRIPT'
+          python3 << 'EOF'
           import os
           import requests
           from datetime import datetime
@@ -95,10 +95,9 @@ jobs:
                   for keyword in ai_ml_keywords
               )
               
-              # Also include repos with specific names (customize this list)
+              # Also include repos with specific names
               priority_repos = [
                   'heart-disease-platform',
-                  # Add more specific repo names here if needed
               ]
               
               if is_ai_ml or repo['name'] in priority_repos:
@@ -116,26 +115,24 @@ jobs:
           print(f"Selected {len(featured_repos)} featured AI/ML projects")
 
           # Generate markdown
-          projects_md = """### 🚀 Featured AI/ML Projects
-
-<div align="center">
-
-"""
+          projects_md = "### 🚀 Featured AI/ML Projects\n\n"
+          projects_md += "<div align=\"center\">\n\n"
 
           for repo in featured_repos:
               repo_name = repo['name']
+              repo_url = repo['html_url']
               
-              # Try to use custom Vercel instance first, fallback to public
-              projects_md += f'''<a href="{repo['html_url']}">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username={username}&repo={repo_name}&theme=shadow_blue&show_owner=true&hide_border=false" />
-</a>
+              # Build the card URL
+              card_url = f"https://github-readme-stats.vercel.app/api/pin/?username={username}&repo={repo_name}&theme=shadow_blue&show_owner=true&hide_border=false"
+              
+              # Add to markdown
+              projects_md += f'<a href="{repo_url}">\n'
+              projects_md += f'  <img align="center" src="{card_url}" />\n'
+              projects_md += '</a>\n\n'
 
-'''
-
-          projects_md += f"""</div>
-
-*🤖 Auto-updated: {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')} | Showing top {len(featured_repos)} AI/ML projects*
-"""
+          projects_md += "</div>\n\n"
+          projects_md += f"*🤖 Auto-updated: {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')} | "
+          projects_md += f"Showing top {len(featured_repos)} AI/ML projects*\n"
 
           # Save to file
           with open('featured_projects.md', 'w', encoding='utf-8') as f:
@@ -153,7 +150,7 @@ jobs:
               privacy = "🔒 Private" if repo['private'] else "🌐 Public"
               print(f"  - {repo['name']} ({privacy}) - ⭐ {repo['stargazers_count']}")
 
-          PYTHON_SCRIPT
+          EOF
 
       - name: Update README with Featured Projects
         run: |
