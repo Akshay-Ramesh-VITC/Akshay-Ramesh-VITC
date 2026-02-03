@@ -12,9 +12,16 @@
 ### ✍️ Random Dev Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
 
+<!-- FEATURED_PROJECTS_START -->
 ### 🚀 Featured AI/ML Projects
+
+<div align="center">
+
 <a href="https://github.com/Akshay-Ramesh-VITC/heart-disease-platform">
-  <img align="center" src="https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=Akshay-Ramesh-VITC&repo=heart-disease-platform&theme=dark" />
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Akshay-Ramesh-VITC&repo=heart-disease-platform&theme=shadow_blue" />
 </a>
+
+</div>
+<!-- FEATURED_PROJECTS_END -->
 
 <!-- Last auto-update: 2026-02-03 04:11:33 UTC -->
