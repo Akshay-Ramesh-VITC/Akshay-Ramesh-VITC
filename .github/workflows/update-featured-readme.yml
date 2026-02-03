@@ -27,9 +27,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests pillow
+          pip install requests
 
-      - name: Generate Featured Projects
+      - name: Generate Featured Projects with Private Repos
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           USERNAME: Akshay-Ramesh-VITC
@@ -38,6 +38,7 @@ jobs:
           import os
           import requests
           from datetime import datetime
+          import json
 
           token = os.environ['GH_TOKEN']
           username = os.environ['USERNAME']
@@ -67,7 +68,7 @@ jobs:
               all_repos.extend(repos)
               page += 1
 
-          print(f"Found {len(all_repos)} repositories")
+          print(f"Found {len(all_repos)} total repositories")
 
           # Filter AI/ML projects
           ai_ml_keywords = [
@@ -95,63 +96,68 @@ jobs:
               if is_ai_ml:
                   featured_repos.append(repo)
 
-          # Sort by stars and updates
+          # Sort by private first (to prioritize), then by stars
           featured_repos.sort(
-              key=lambda x: (x.get('stargazers_count', 0), x.get('updated_at', '')), 
-              reverse=True
+              key=lambda x: (not x.get('private', False), -x.get('stargazers_count', 0), x.get('updated_at', '')), 
+              reverse=False
           )
           featured_repos = featured_repos[:6]
 
-          print(f"\nFeatured repositories:")
+          print(f"\nFeatured AI/ML repositories (including private):")
+          private_count = 0
+          public_count = 0
           for repo in featured_repos:
-              privacy = "🔒 PRIVATE" if repo.get('private', False) else "🌐 Public"
+              is_private = repo.get('private', False)
+              privacy = "🔒 PRIVATE" if is_private else "🌐 Public"
               stars = repo.get('stargazers_count', 0)
               print(f"  - {repo.get('name', 'Unknown')} ({privacy}) ⭐{stars}")
+              if is_private:
+                  private_count += 1
+              else:
+                  public_count += 1
 
-          # Generate markdown with custom badges
+          print(f"\nSummary: {private_count} private, {public_count} public")
+
+          # Generate markdown - using table format for better visibility
           projects_md = "### 🚀 Featured AI/ML Projects\n\n"
-          projects_md += "<div align=\"center\">\n\n"
-
-          # Color scheme for badges
-          colors = ['red', 'blue', 'green', 'purple', 'orange', 'pink']
           
-          for idx, repo in enumerate(featured_repos):
-              repo_name = repo.get('name', 'Unknown')
-              repo_url = repo.get('html_url', '#')
-              description = (repo.get('description') or 'AI/ML Project')
-              # Truncate description safely
-              if len(description) > 50:
-                  description = description[:47] + '...'
-              language = repo.get('language') or 'Python'
-              stars = repo.get('stargazers_count', 0)
-              is_private = repo.get('private', False)
-              color = colors[idx % len(colors)]
+          if len(featured_repos) > 0:
+              projects_md += "| Project | Description | Language | Privacy | Stars |\n"
+              projects_md += "|---------|-------------|----------|---------|-------|\n"
               
-              # Privacy badge
-              privacy_badge = "🔒_Private" if is_private else "🌐_Public"
-              
-              # Create custom badge - escape special characters
-              badge_label = repo_name.replace('-', '_').replace(' ', '_')
-              badge_url = f"https://img.shields.io/badge/{badge_label}-{language}-{color}?style=for-the-badge&logo=github"
-              
-              projects_md += f'<a href="{repo_url}">\n'
-              projects_md += f'  <img src="{badge_url}" alt="{repo_name}" />\n'
-              projects_md += '</a>\n'
-              projects_md += f'<br/>\n'
-              projects_md += f'<sub>{privacy_badge} • ⭐ {stars} • {description}</sub>\n\n'
+              for repo in featured_repos:
+                  repo_name = repo.get('name', 'Unknown')
+                  repo_url = repo.get('html_url', '#')
+                  description = (repo.get('description') or 'AI/ML Project')
+                  if len(description) > 60:
+                      description = description[:57] + '...'
+                  language = repo.get('language') or 'Python'
+                  stars = repo.get('stargazers_count', 0)
+                  is_private = repo.get('private', False)
+                  
+                  privacy_icon = "🔒 Private" if is_private else "🌐 Public"
+                  
+                  # Create clickable link
+                  name_link = f"[{repo_name}]({repo_url})"
+                  
+                  # Language badge
+                  lang_badge = f"![{language}](https://img.shields.io/badge/{language}-informational?style=flat&logo=python&logoColor=white&color=2bbc8a)"
+                  
+                  projects_md += f"| {name_link} | {description} | {lang_badge} | {privacy_icon} | ⭐ {stars} |\n"
+          else:
+              projects_md += "*No AI/ML projects found*\n"
 
-          projects_md += "</div>\n\n"
-          projects_md += f"*🤖 Auto-updated: {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')} | Showing {len(featured_repos)} AI/ML projects*\n"
+          projects_md += f"\n*🤖 Auto-updated: {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')} • Showing {len(featured_repos)} AI/ML projects ({private_count} private, {public_count} public)*\n"
 
           # Save to file
           with open('featured_projects.md', 'w', encoding='utf-8') as f:
               f.write(projects_md)
 
-          print("\n" + "="*50)
-          print("Generated markdown:")
-          print("="*50)
+          print("\n" + "="*60)
+          print("Generated markdown preview:")
+          print("="*60)
           print(projects_md)
-          print("="*50)
+          print("="*60)
 
           EOF
 
@@ -177,15 +183,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "✅ No changes to commit"
           else
-            git commit -m "🚀 Auto-update featured AI/ML projects [$(date +'%Y-%m-%d %H:%M')]"
+            git commit -m "🚀 Auto-update featured AI/ML projects (including ${PRIVATE_COUNT:-0} private) [$(date +'%Y-%m-%d %H:%M')]"
             git push
             echo "✅ Changes pushed successfully"
           fi
-
-      - name: Summary
-        if: always()
-        run: |
-          echo "### 🎉 Workflow Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "✅ Workflow completed" >> $GITHUB_STEP_SUMMARY
-          echo "📅 Updated: $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
