@@ -1,0 +1,203 @@
+name: Auto-Update Featured AI/ML Projects
+
+on:
+  schedule:
+    - cron: '0 */12 * * *'  # Every 12 hours
+  workflow_dispatch:  # Manual trigger
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update-featured-projects.yml'
+
+jobs:
+  update-featured-projects:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests PyGithub
+
+      - name: Generate Featured Projects with Private Repos
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          USERNAME: Akshay-Ramesh-VITC
+        run: |
+          python3 << 'PYTHON_SCRIPT'
+          import os
+          import requests
+          from datetime import datetime
+
+          # Configuration
+          token = os.environ['GH_TOKEN']
+          username = os.environ['USERNAME']
+          
+          headers = {
+              'Authorization': f'token {token}',
+              'Accept': 'application/vnd.github.v3+json'
+          }
+
+          # Fetch all repositories (including private)
+          print("Fetching repositories...")
+          all_repos = []
+          page = 1
+          
+          while True:
+              url = f'https://api.github.com/user/repos?affiliation=owner&per_page=100&page={page}'
+              response = requests.get(url, headers=headers)
+              
+              if response.status_code != 200:
+                  print(f"Error fetching repos: {response.status_code}")
+                  break
+                  
+              repos = response.json()
+              if not repos:
+                  break
+                  
+              all_repos.extend(repos)
+              page += 1
+
+          print(f"Found {len(all_repos)} total repositories")
+
+          # Filter AI/ML projects by topics, description, or name
+          ai_ml_keywords = [
+              'machine-learning', 'ml', 'ai', 'artificial-intelligence',
+              'deep-learning', 'neural-network', 'tensorflow', 'pytorch',
+              'computer-vision', 'nlp', 'data-science', 'kaggle',
+              'classification', 'regression', 'clustering', 'prediction'
+          ]
+
+          featured_repos = []
+          
+          for repo in all_repos:
+              repo_name_lower = repo['name'].lower()
+              description_lower = (repo.get('description') or '').lower()
+              topics = repo.get('topics', [])
+              
+              # Check if repo is AI/ML related
+              is_ai_ml = any(
+                  keyword in repo_name_lower or 
+                  keyword in description_lower or 
+                  keyword in topics
+                  for keyword in ai_ml_keywords
+              )
+              
+              # Also include repos with specific names (customize this list)
+              priority_repos = [
+                  'heart-disease-platform',
+                  # Add more specific repo names here if needed
+              ]
+              
+              if is_ai_ml or repo['name'] in priority_repos:
+                  featured_repos.append(repo)
+
+          # Sort by stars, then by last update
+          featured_repos.sort(
+              key=lambda x: (x['stargazers_count'], x['updated_at']), 
+              reverse=True
+          )
+
+          # Limit to top 6 projects
+          featured_repos = featured_repos[:6]
+
+          print(f"Selected {len(featured_repos)} featured AI/ML projects")
+
+          # Generate markdown
+          projects_md = """### 🚀 Featured AI/ML Projects
+
+<div align="center">
+
+"""
+
+          for repo in featured_repos:
+              repo_name = repo['name']
+              
+              # Try to use custom Vercel instance first, fallback to public
+              projects_md += f'''<a href="{repo['html_url']}">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username={username}&repo={repo_name}&theme=shadow_blue&show_owner=true&hide_border=false" />
+</a>
+
+'''
+
+          projects_md += f"""</div>
+
+*🤖 Auto-updated: {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')} | Showing top {len(featured_repos)} AI/ML projects*
+"""
+
+          # Save to file
+          with open('featured_projects.md', 'w', encoding='utf-8') as f:
+              f.write(projects_md)
+
+          print("\n" + "="*50)
+          print("Generated Featured Projects:")
+          print("="*50)
+          print(projects_md)
+          print("="*50)
+          
+          # Print repo names for verification
+          print("\nFeatured repositories:")
+          for repo in featured_repos:
+              privacy = "🔒 Private" if repo['private'] else "🌐 Public"
+              print(f"  - {repo['name']} ({privacy}) - ⭐ {repo['stargazers_count']}")
+
+          PYTHON_SCRIPT
+
+      - name: Update README with Featured Projects
+        run: |
+          if grep -q "<!-- FEATURED_PROJECTS_START -->" README.md && grep -q "<!-- FEATURED_PROJECTS_END -->" README.md; then
+            # Extract content before start marker
+            sed -n '1,/<!-- FEATURED_PROJECTS_START -->/p' README.md > temp_readme.md
+            
+            # Add generated content
+            cat featured_projects.md >> temp_readme.md
+            
+            # Add content after end marker
+            sed -n '/<!-- FEATURED_PROJECTS_END -->/,$p' README.md >> temp_readme.md
+            
+            # Replace README
+            mv temp_readme.md README.md
+            
+            echo "✅ Featured projects section updated successfully"
+          else
+            echo "❌ Error: Markers not found in README.md"
+            echo "Please add <!-- FEATURED_PROJECTS_START --> and <!-- FEATURED_PROJECTS_END --> to your README"
+            exit 1
+          fi
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Actions Bot"
+          git add README.md
+          
+          if git diff --staged --quiet; then
+            echo "✅ No changes detected - featured projects already up to date"
+          else
+            git commit -m "🚀 Auto-update featured AI/ML projects [$(date +'%Y-%m-%d %H:%M')]"
+            git push
+            echo "✅ Changes committed and pushed successfully"
+          fi
+
+      - name: Workflow Summary
+        run: |
+          echo "### 🎉 Workflow Completed!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Featured AI/ML projects updated automatically" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Private repositories included" >> $GITHUB_STEP_SUMMARY
+          echo "⏰ Next update: 12 hours" >> $GITHUB_STEP_SUMMARY
+          echo "📅 Updated: $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
