@@ -18,10 +18,16 @@
 <div align="center">
 
 <a href="https://github.com/Akshay-Ramesh-VITC/heart-disease-platform">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Akshay-Ramesh-VITC&repo=heart-disease-platform&theme=shadow_blue" />
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Akshay-Ramesh-VITC&repo=heart-disease-platform&theme=shadow_blue&show_owner=true&hide_border=false" />
+</a>
+
+<a href="https://github.com/Akshay-Ramesh-VITC/Basic-Python-Programs">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Akshay-Ramesh-VITC&repo=Basic-Python-Programs&theme=shadow_blue&show_owner=true&hide_border=false" />
 </a>
 
 </div>
+
+*🤖 Auto-updated: 2026-02-03 04:29 UTC | Showing top 2 AI/ML projects*
 <!-- FEATURED_PROJECTS_END -->
 
 <!-- Last auto-update: 2026-02-03 04:11:33 UTC -->
