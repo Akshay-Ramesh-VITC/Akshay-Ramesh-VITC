@@ -12,10 +12,9 @@
 ### ✍️ Random Dev Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
 
-### 🔝 Top Contributed Repo
-![](https://github-contributor-stats.vercel.app/api?username=Akshay-Ramesh-VITC&limit=5&theme=dark&combine_all_yearly_contributions=true)
-
----
-[![](https://visitcount.itsvg.in/api?id=Akshay-Ramesh-VITC&icon=0&color=2)](https://visitcount.itsvg.in)
+### 🚀 Featured AI/ML Projects
+<a href="https://github.com/Akshay-Ramesh-VITC/heart-disease-platform">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Akshay-Ramesh-VITC&repo=heart-disease-platform&theme=shadow_blue" />
+</a>
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
