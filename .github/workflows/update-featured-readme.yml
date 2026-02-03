@@ -175,8 +175,9 @@ jobs:
                   'Go': '00ADD8'
                   }.get(language, '808080')
                   
-                  lang_badge = f"![{language}](https://img.shields.io/badge/{language}-{lang_color}?style=flat-square)"
-                  
+                  lang_encoded = language.replace(' ', '%20').replace('+', '%2B')
+                  lang_badge = f"![{language}](https://img.shields.io/badge/{lang_encoded}-{lang_color}?style=flat-square&logo=python)"
+
                   # Project name as link
                   name_link = f"**[{repo_name}]({repo_url})**"
                   
