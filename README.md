@@ -18,11 +18,11 @@
 <div align="center">
 
 <a href="https://github.com/Akshay-Ramesh-VITC/heart-disease-platform">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Akshay-Ramesh-VITC&repo=heart-disease-platform&theme=shadow_blue&show_owner=true&hide_border=false" />
+  <img align="center" src="https://github-readme-stats.vercel-eight-theta.app/api/pin/?username=Akshay-Ramesh-VITC&repo=heart-disease-platform&theme=dark&show_owner=true&hide_border=false" />
 </a>
 
 <a href="https://github.com/Akshay-Ramesh-VITC/Basic-Python-Programs">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Akshay-Ramesh-VITC&repo=Basic-Python-Programs&theme=shadow_blue&show_owner=true&hide_border=false" />
+  <img align="center" src="https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=Akshay-Ramesh-VITC&repo=Basic-Python-Programs&theme=dark&show_owner=true&hide_border=false" />
 </a>
 
 </div>
