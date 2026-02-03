@@ -1,88 +1,21 @@
-# Welcome to Akshay R's GitHub Profile 🚀
 
-![Akshay R's GitHub Stats](https://github-readme-stats.vercel.app/api?username=Akshay-Ramesh-VITC)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Akshay-Ramesh-VITC)
-[![trophy](https://github-profile-trophy.vercel.app/?username=Akshay-Ramesh-VITC)](https://github.com/Akshay-Ramesh-VITC)
-[![GitHub Streak](https://streak-stats.demolab.com/?user=Akshay-Ramesh-VITC)](https://git.io/streak-stats)
+# 💻 Tech Stack:
+![C](https://img.shields.io/badge/c-%2300599C.svg?style=flat&logo=c&logoColor=white) ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=flat&logo=c%2B%2B&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat&logo=css3&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=flat&logo=html5&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=flat&logo=openjdk&logoColor=white) ![LaTeX](https://img.shields.io/badge/latex-%23008080.svg?style=flat&logo=latex&logoColor=white) ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=flat&logo=markdown&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=flat&logo=python&logoColor=ffdd54) ![R](https://img.shields.io/badge/r-%23276DC3.svg?style=flat&logo=r&logoColor=white) ![Bash Script](https://img.shields.io/badge/bash_script-%23121011.svg?style=flat&logo=gnu-bash&logoColor=white) ![Windows Terminal](https://img.shields.io/badge/Windows%20Terminal-%234D4D4D.svg?style=flat&logo=windows-terminal&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat&logo=typescript&logoColor=white) ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=flat&logo=amazon-aws&logoColor=white) ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=flat&logo=firebase) ![Glitch](https://img.shields.io/badge/glitch-%233333FF.svg?style=flat&logo=glitch&logoColor=white) ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=flat&logo=netlify&logoColor=#00C7B7) ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=flat&logo=vercel&logoColor=white) ![Chart.js](https://img.shields.io/badge/chart.js-F5788D.svg?style=flat&logo=chart.js&logoColor=white) ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=flat&logo=django&logoColor=white) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=flat&logo=express&logoColor=%2361DAFB) ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat&logo=fastapi) ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=flat&logo=flask&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=flat&logo=node.js&logoColor=white) ![Next JS](https://img.shields.io/badge/Next-black?style=flat&logo=next.js&logoColor=white) ![OpenCV](https://img.shields.io/badge/opencv-%23white.svg?style=flat&logo=opencv&logoColor=white) ![Qt](https://img.shields.io/badge/Qt-%23217346.svg?style=flat&logo=Qt&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white) ![Three js](https://img.shields.io/badge/threejs-black?style=flat&logo=three.js&logoColor=white) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=flat&logo=vite&logoColor=white) ![Vue.js](https://img.shields.io/badge/vue.js-%2335495e.svg?style=flat&logo=vuedotjs&logoColor=%234FC08D) ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=flat&logo=mysql&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=flat&logo=mongodb&logoColor=white) ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=flat&logo=postgresql&logoColor=white) ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=flat&logo=sqlite&logoColor=white) ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat&logo=supabase&logoColor=white) ![Adobe Creative Cloud](https://img.shields.io/badge/Adobe%20Creative%20Cloud-DA1F26.svg?style=flat&logo=Adobe%20Creative%20Cloud&logoColor=white) ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=flat&logo=Canva&logoColor=white) ![Sketch Up](https://img.shields.io/badge/SketchUp-005F9E?style=flat&logo=sketchup&logoColor=white) ![Keras](https://img.shields.io/badge/Keras-%23D00000.svg?style=flat&logo=Keras&logoColor=white) ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=flat&logo=Matplotlib&logoColor=black) ![mlflow](https://img.shields.io/badge/mlflow-%23d9ead3.svg?style=flat&logo=numpy&logoColor=blue) ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=flat&logo=numpy&logoColor=white) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=flat&logo=pandas&logoColor=white) ![Plotly](https://img.shields.io/badge/Plotly-%233F4F75.svg?style=flat&logo=plotly&logoColor=white) ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=flat&logo=PyTorch&logoColor=white) ![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=flat&logo=scikit-learn&logoColor=white) ![Scipy](https://img.shields.io/badge/SciPy-%230C55A5.svg?style=flat&logo=scipy&logoColor=%white) ![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=flat&logo=TensorFlow&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=flat&logo=github&logoColor=white) ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=flat&logo=git&logoColor=white) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white)
+# 📊 GitHub Stats:
+![](https://github-readme-stats.vercel.app/api?username=Akshay-Ramesh-VITC&theme=shadow_blue&hide_border=false&include_all_commits=true&count_private=true)<br/>
+![](https://nirzak-streak-stats.vercel.app/?user=Akshay-Ramesh-VITC&theme=shadow_blue&hide_border=false)<br/>
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=Akshay-Ramesh-VITC&theme=shadow_blue&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
 
-## About Me 👨‍💻
+## 🏆 GitHub Trophies
+![](https://github-profile-trophy.vercel.app/?username=Akshay-Ramesh-VITC&theme=shadow_blue&no-frame=false&no-bg=true&margin-w=4)
 
-### Hi there, I'm Akshay R, a student at VIT Chennai passionate about Artificial Intelligence and Machine Learning. 
-- 🔭 I’m currently working on honing my skills in Python and exploring various web development technologies.
-- 🌱 I’m actively learning new AI concepts and looking to expand my knowledge in the field.
-- 👯 I’m looking to collaborate on exciting AI projects that push the boundaries of innovation.
-- 💬 Ask me about Python, HTML, JavaScript, AI, and ML.
+### ✍️ Random Dev Quote
+![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
 
-```javascript
-const akshay = {
-  pronouns: "He" | "Him",
-  code: ["Python", "HTML", "JavaScript", "CSS"],
-  technologies: {
-    backEnd: {
-        Python: ["Django", "Flask"],
-    },
-    frontEnd: {
-        JS: ["React"],
-        CSS: ["Bootstrap", "Tailwind"],
-    },
-  },
-  currentFocus: "Delving deeper into AI and mastering Python web development."
-};
-```
-
-## Projects 🚀
-
-### Some of my noteworthy projects include:
-- [Basic Python Programs](https://github.com/Akshay-Ramesh-VITC/Basic-Python-Programs) - A collection of Python programming questions and solutions.
-- [Heart Disease Platform](https://github.com/Akshay-Ramesh-VITC/heart-disease-platform) - Utilizing Python, HTML, JavaScript, and CSS for an efficient heart disease detection platform.
-
-## Let's Connect 🤙
-- Explore more about my work on [GitHub](https://github.com/Akshay-Ramesh-VITC)
-- Connect with me on [LinkedIn](https://www.linkedin.com/in/akshay-ramesh-vitc/)
-
-## Stay tuned for more updates and exciting projects! 🎉
-
-Feel free to reach out for collaborations or just to chat about all things tech! 👨‍💻🚀
-
-![Thanks for visiting!](https://img.shields.io/badge/Thanks%20for%20Visiting!-Have%20a%20Great%20Day!-brightgreen)## Welcome to Akshay R's GitHub Profile! 👋
-
-![Profile Views](https://komarev.com/ghpvc/?username=Akshay-Ramesh-VITC)
-[![GitHub Followers](https://img.shields.io/github/followers/Akshay-Ramesh-VITC?style=social)](https://github.com/Akshay-Ramesh-VITC)
-![GitHub Stars](https://img.shields.io/github/stars/Akshay-Ramesh-VITC?style=social)
-[![GitHub](https://img.shields.io/badge/GitHub-Akshay%20R-000?style=flat&logo=github)](https://github.com/Akshay-Ramesh-VITC)
-
-Hi there, I'm Akshay R, an aspiring AI enthusiast studying at VIT Chennai. My GitHub journey may be in its early stages, but my active engagement in coding and exploring various AI concepts keeps me inspired. Let's delve into my world of coding and projects!
-
-### 🔧 Skills & Technologies
-```javascript
-const akshay = {
-  pronouns: "He" | "Him",
-  code: ["Python", "HTML", "JavaScript", "CSS"],
-  interests: ["Artificial Intelligence", "Machine Learning", "Web Development"],
-  tools: ["Git", "Jupyter", "VS Code"],
-  projects: ["Basic Python Programs", "Heart Disease Platform"]
-};
-```
-
-### 🚀 Featured Projects
-- [Basic Python Programs](https://github.com/Akshay-Ramesh-VITC/Basic-Python-Programs): Dive into Python programming challenges and their solutions.
-- [Heart Disease Platform](https://github.com/Akshay-Ramesh-VITC/heart-disease-platform): A showcase of my skills in Python, HTML, JavaScript, and CSS.
-
-### 📊 GitHub Stats
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Akshay-Ramesh-VITC)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Akshay-Ramesh-VITC)
-[![GitHub Streak](https://streak-stats.herokuapp.com/?user=Akshay-Ramesh-VITC)](https://git.io/streak-stats)
-
-### 🤝 Connect with Me
-Feel free to reach out for collaborations, AI discussions, or just to connect!
-- Connect on [LinkedIn](#)
-- Email me at akshayrame*********@gmail.com
-
-### 🌟 Fun Fact
-"Did you know there are two ways to write error-free programs; only the third one works?" 😉
-
-Thank you for visiting my GitHub profile! Keep exploring, keep coding, and keep learning! 🚀
+### 🔝 Top Contributed Repo
+![](https://github-contributor-stats.vercel.app/api?username=Akshay-Ramesh-VITC&limit=5&theme=dark&combine_all_yearly_contributions=true)
 
 ---
+[![](https://visitcount.itsvg.in/api?id=Akshay-Ramesh-VITC&icon=0&color=2)](https://visitcount.itsvg.in)
 
-*Note: This README is a dynamic representation and may evolve as my GitHub journey progresses.*
+<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
