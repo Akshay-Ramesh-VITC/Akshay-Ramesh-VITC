@@ -18,16 +18,20 @@
 <div align="center">
 
 <a href="https://github.com/Akshay-Ramesh-VITC/heart-disease-platform">
-  <img align="center" src="https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=Akshay-Ramesh-VITC&repo=heart-disease-platform&theme=dark&show_owner=true&hide_border=false" />
+  <img src="https://img.shields.io/badge/heart_disease_platform-Python-red?style=for-the-badge&logo=github" alt="heart-disease-platform" />
 </a>
+<br/>
+<sub>🌐_Public • ⭐ 0 • AI/ML Project</sub>
 
 <a href="https://github.com/Akshay-Ramesh-VITC/Basic-Python-Programs">
-  <img align="center" src="https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=Akshay-Ramesh-VITC&repo=Basic-Python-Programs&theme=dark&show_owner=true&hide_border=false" />
+  <img src="https://img.shields.io/badge/Basic_Python_Programs-Python-blue?style=for-the-badge&logo=github" alt="Basic-Python-Programs" />
 </a>
+<br/>
+<sub>🌐_Public • ⭐ 0 • This repository will contain basic python progr...</sub>
 
 </div>
 
-*🤖 Auto-updated: 2026-02-03 04:29 UTC | Showing top 2 AI/ML projects*
+*🤖 Auto-updated: 2026-02-03 04:36 UTC | Showing 2 AI/ML projects*
 <!-- FEATURED_PROJECTS_END -->
 
 <!-- Last auto-update: 2026-02-03 04:11:33 UTC -->
