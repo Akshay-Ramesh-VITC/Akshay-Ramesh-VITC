@@ -19,12 +19,12 @@
 |---------|-------------|----------|--------|-------|
 | **[heart-disease-platform](https://github.com/Akshay-Ramesh-VITC/heart-disease-platform)** | Project | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square) | ![Public](https://img.shields.io/badge/Public-green?style=flat-square&logo=github) | ⭐ 0 |
 | **[Basic-Python-Programs](https://github.com/Akshay-Ramesh-VITC/Basic-Python-Programs)** | This repository will contain basic python progr... | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square) | ![Public](https://img.shields.io/badge/Public-green?style=flat-square&logo=github) | ⭐ 0 |
-| **[Federated_Learning](https://github.com/Akshay-Ramesh-VITC/Federated_Learning)** | Project | ![Jupyter Notebook](https://img.shields.io/badge/Jupyter Notebook-808080?style=flat-square) | ![Private](https://img.shields.io/badge/Private-red?style=flat-square&logo=github) | ⭐ 0 |
-| **[NeuroSleep](https://github.com/Akshay-Ramesh-VITC/NeuroSleep)** | Project | ![Jupyter Notebook](https://img.shields.io/badge/Jupyter Notebook-808080?style=flat-square) | ![Private](https://img.shields.io/badge/Private-red?style=flat-square&logo=github) | ⭐ 0 |
-| **[AutifusionPlusPlus](https://github.com/Akshay-Ramesh-VITC/AutifusionPlusPlus)** | Project | ![Jupyter Notebook](https://img.shields.io/badge/Jupyter Notebook-808080?style=flat-square) | ![Private](https://img.shields.io/badge/Private-red?style=flat-square&logo=github) | ⭐ 0 |
+| **[Federated_Learning](https://github.com/Akshay-Ramesh-VITC/Federated_Learning)** | Project | ![Jupyter Notebook](https://img.shields.io/badge/Jupyter Notebook-F37626?style=flat-square) | ![Private](https://img.shields.io/badge/Private-red?style=flat-square&logo=github) | ⭐ 0 |
+| **[NeuroSleep](https://github.com/Akshay-Ramesh-VITC/NeuroSleep)** | Project | ![Jupyter Notebook](https://img.shields.io/badge/Jupyter Notebook-F37626?style=flat-square) | ![Private](https://img.shields.io/badge/Private-red?style=flat-square&logo=github) | ⭐ 0 |
+| **[AutifusionPlusPlus](https://github.com/Akshay-Ramesh-VITC/AutifusionPlusPlus)** | Project | ![Jupyter Notebook](https://img.shields.io/badge/Jupyter Notebook-F37626?style=flat-square) | ![Private](https://img.shields.io/badge/Private-red?style=flat-square&logo=github) | ⭐ 0 |
 | **[SIH_2024_VIT_Career](https://github.com/Akshay-Ramesh-VITC/SIH_2024_VIT_Career)** | Project | ![Code](https://img.shields.io/badge/Code-808080?style=flat-square) | ![Private](https://img.shields.io/badge/Private-red?style=flat-square&logo=github) | ⭐ 0 |
 
-*🤖 Auto-updated: 2026-02-03 04:43 UTC • 6 projects (2 public, 4 private)*
+*🤖 Auto-updated: 2026-02-03 04:47 UTC • 6 projects (2 public, 4 private)*
 <!-- FEATURED_PROJECTS_END -->
 
 <!-- Last auto-update: 2026-02-03 04:11:33 UTC -->
