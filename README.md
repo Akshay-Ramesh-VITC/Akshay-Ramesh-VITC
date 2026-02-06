@@ -3,7 +3,8 @@
 
 # 📊 GitHub Stats:
 ![](https://github-readme-stats.vercel.app/api?username=Akshay-Ramesh-VITC&theme=shadow_blue&hide_border=false&include_all_commits=true&count_private=true&show_icons=true)<br/>
-![](https://nirzak-streak-stats.vercel.app/?user=Akshay-Ramesh-VITC&theme=shadow_blue&hide_border=false)<br/>
+![]![](https://nirzak-streak-stats.vercel.app/?user=Akshay-Ramesh-VITC&theme=shadow_blue&hide_border=false&cache_seconds=86400)
+<br/>
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=Akshay-Ramesh-VITC&theme=shadow_blue&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
 
 ## 🏆 GitHub Trophies
