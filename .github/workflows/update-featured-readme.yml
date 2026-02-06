@@ -238,4 +238,4 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "Featured projects section updated with public and private repositories" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "📅 **Updated:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "📅 **Updated:** $(TZ='Asia/Kolkata' date +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
