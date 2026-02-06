@@ -27,7 +27,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests
+          pip install requests pytz
 
       - name: Generate Featured Projects (All Private Repos)
         env:
@@ -38,6 +38,7 @@ jobs:
           import os
           import requests
           from datetime import datetime
+          import pytz
 
           token = os.environ['GH_TOKEN']
           username = os.environ['USERNAME']
@@ -188,7 +189,11 @@ jobs:
           private_count = sum(1 for r in featured_repos if r.get('private', False))
           public_count = len(featured_repos) - private_count
 
-          projects_md += f"\n*🤖 Auto-updated: {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')} • "
+          # Get current time in IST
+          ist = pytz.timezone('Asia/Kolkata')
+          ist_time = datetime.now(ist)
+          
+          projects_md += f"\n*🤖 Auto-updated: {ist_time.strftime('%Y-%m-%d %H:%M IST')} • "
           projects_md += f"{len(featured_repos)} projects ({public_count} public, {private_count} private)*\n"
 
           # Save to file
@@ -226,7 +231,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "✅ No changes to commit"
           else
-            git commit -m "🚀 Auto-update featured projects (including private repos) [$(date +'%Y-%m-%d %H:%M')]"
+            git commit -m "🚀 Auto-update featured projects (including private repos) [$(TZ='Asia/Kolkata' date +'%Y-%m-%d %H:%M IST')]"
             git push
             echo "✅ Changes pushed successfully"
           fi
@@ -238,4 +243,4 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "Featured projects section updated with public and private repositories" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "📅 **Updated:** $(TZ='Asia/Kolkata' date +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "📅 **Updated:** $(TZ='Asia/Kolkata' date +'%Y-%m-%d %H:%M:%S IST')" >> $GITHUB_STEP_SUMMARY
