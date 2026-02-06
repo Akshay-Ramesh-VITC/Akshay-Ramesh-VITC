@@ -18,7 +18,7 @@
 
 | Project | Description | Language | Status | Stars |
 |---------|-------------|----------|--------|-------|
-| **[ToTf](https://github.com/Akshay-Ramesh-VITC/ToTf)** | A Cross-Library Compatible Library for adding m... | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python) | ![Public](https://img.shields.io/badge/Public-green?style=flat-square&logo=github) | ⭐ 0 |
+| **[ToTf](https://github.com/Akshay-Ramesh-VITC/ToTf)** | A Cross-Library Compatible Library for adding m... | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python) | ![Public](https://img.shields.io/badge/Public-green?style=flat-square&logo=github) | ⭐ 1 |
 | **[pycryptodome](https://github.com/Akshay-Ramesh-VITC/pycryptodome)** | A self-contained cryptographic library for Python | ![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=python) | ![Public](https://img.shields.io/badge/Public-green?style=flat-square&logo=github) | ⭐ 0 |
 | **[heart-disease-platform](https://github.com/Akshay-Ramesh-VITC/heart-disease-platform)** | Project | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python) | ![Public](https://img.shields.io/badge/Public-green?style=flat-square&logo=github) | ⭐ 0 |
 | **[Basic-Python-Programs](https://github.com/Akshay-Ramesh-VITC/Basic-Python-Programs)** | This repository will contain basic python progr... | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python) | ![Public](https://img.shields.io/badge/Public-green?style=flat-square&logo=github) | ⭐ 0 |
@@ -27,7 +27,7 @@
 | **[AutifusionPlusPlus](https://github.com/Akshay-Ramesh-VITC/AutifusionPlusPlus)** | Project | ![Jupyter Notebook](https://img.shields.io/badge/Jupyter%20Notebook-F37626?style=flat-square&logo=python) | ![Private](https://img.shields.io/badge/Private-red?style=flat-square&logo=github) | ⭐ 0 |
 | **[SIH_2024_VIT_Career](https://github.com/Akshay-Ramesh-VITC/SIH_2024_VIT_Career)** | Project | ![Code](https://img.shields.io/badge/Code-808080?style=flat-square&logo=python) | ![Private](https://img.shields.io/badge/Private-red?style=flat-square&logo=github) | ⭐ 0 |
 
-*🤖 Auto-updated: 2026-02-06 12:03 IST • 8 projects (4 public, 4 private)*
+*🤖 Auto-updated: 2026-02-06 18:41 IST • 8 projects (4 public, 4 private)*
 <!-- FEATURED_PROJECTS_END -->
 
 <!-- Last auto-update: 2026-02-03 04:11:33 UTC -->
