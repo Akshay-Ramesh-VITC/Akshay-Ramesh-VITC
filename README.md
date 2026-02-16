@@ -25,12 +25,12 @@
 | **[pycryptodome](https://github.com/Akshay-Ramesh-VITC/pycryptodome)** | A self-contained cryptographic library for Python | ![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=python) | ![Public](https://img.shields.io/badge/Public-green?style=flat-square&logo=github) | ⭐ 0 |
 | **[heart-disease-platform](https://github.com/Akshay-Ramesh-VITC/heart-disease-platform)** | Project | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python) | ![Public](https://img.shields.io/badge/Public-green?style=flat-square&logo=github) | ⭐ 0 |
 | **[Basic-Python-Programs](https://github.com/Akshay-Ramesh-VITC/Basic-Python-Programs)** | This repository will contain basic python progr... | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python) | ![Public](https://img.shields.io/badge/Public-green?style=flat-square&logo=github) | ⭐ 0 |
+| **[MobileNetV5](https://github.com/Akshay-Ramesh-VITC/MobileNetV5)** | Project | ![Jupyter Notebook](https://img.shields.io/badge/Jupyter%20Notebook-F37626?style=flat-square&logo=python) | ![Private](https://img.shields.io/badge/Private-red?style=flat-square&logo=github) | ⭐ 0 |
 | **[AI-File-Compression-Optimizer](https://github.com/Akshay-Ramesh-VITC/AI-File-Compression-Optimizer)** | Project | ![Code](https://img.shields.io/badge/Code-808080?style=flat-square&logo=python) | ![Private](https://img.shields.io/badge/Private-red?style=flat-square&logo=github) | ⭐ 0 |
-| **[MobileNetV5](https://github.com/Akshay-Ramesh-VITC/MobileNetV5)** | Project | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python) | ![Private](https://img.shields.io/badge/Private-red?style=flat-square&logo=github) | ⭐ 0 |
 | **[XAI_Stability_Project](https://github.com/Akshay-Ramesh-VITC/XAI_Stability_Project)** | XAI - Dataset Stability | ![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=python) | ![Private](https://img.shields.io/badge/Private-red?style=flat-square&logo=github) | ⭐ 0 |
 | **[Federated_Learning](https://github.com/Akshay-Ramesh-VITC/Federated_Learning)** | Project | ![Jupyter Notebook](https://img.shields.io/badge/Jupyter%20Notebook-F37626?style=flat-square&logo=python) | ![Private](https://img.shields.io/badge/Private-red?style=flat-square&logo=github) | ⭐ 0 |
 
-*🤖 Auto-updated: 2026-02-15 18:36 IST • 8 projects (4 public, 4 private)*
+*🤖 Auto-updated: 2026-02-16 06:33 IST • 8 projects (4 public, 4 private)*
 <!-- FEATURED_PROJECTS_END -->
 
 <!-- Last auto-update: 2026-02-03 04:11:33 UTC -->
