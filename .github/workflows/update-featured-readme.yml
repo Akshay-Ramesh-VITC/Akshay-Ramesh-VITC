@@ -1,4 +1,4 @@
-name: Auto-Update Featured AI/ML Projects
+name: Auto-Update All Projects
 
 on:
   schedule:
@@ -8,7 +8,7 @@ on:
     branches: [main]
 
 jobs:
-  update-featured-projects:
+  update-projects:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -29,7 +29,7 @@ jobs:
         run: |
           pip install requests pytz
 
-      - name: Generate Featured Projects (All Private Repos)
+      - name: Generate All Projects List
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           USERNAME: Akshay-Ramesh-VITC
@@ -70,64 +70,28 @@ jobs:
 
           print(f"Found {len(all_repos)} total repositories")
 
-          # Separate public AI/ML and all private repos
-          ai_ml_keywords = [
-              'machine-learning', 'ml', 'ai', 'artificial-intelligence',
-              'deep-learning', 'neural-network', 'tensorflow', 'pytorch',
-              'computer-vision', 'nlp', 'data-science', 'kaggle',
-              'classification', 'regression', 'clustering', 'prediction',
-              'heart', 'disease', 'medical', 'health', 'platform'
-          ]
-
-          public_ai_ml = []
-          private_repos = []
+          display_repos = []
           
           for repo in all_repos:
               # Skip the profile README repo itself
               if repo.get('name') == username:
                   continue
-                  
-              if repo.get('private', False):
-                  # Add ALL private repos
-                  private_repos.append(repo)
-              else:
-                  # Only add public repos if they're AI/ML related
-                  repo_name_lower = repo.get('name', '').lower()
-                  description_lower = (repo.get('description') or '').lower()
-                  topics = repo.get('topics', [])
-                  
-                  is_ai_ml = any(
-                      keyword in repo_name_lower or 
-                      keyword in description_lower or 
-                      keyword in topics
-                      for keyword in ai_ml_keywords
-                  )
-                  
-                  if is_ai_ml:
-                      public_ai_ml.append(repo)
+              
+              display_repos.append(repo)
 
-          # Sort each group by stars, then by update date
-          public_ai_ml.sort(
+          # Sort by stars, then by update date
+          display_repos.sort(
               key=lambda x: (x.get('stargazers_count', 0), x.get('updated_at', '')), 
               reverse=True
           )
-          private_repos.sort(
-              key=lambda x: (x.get('stargazers_count', 0), x.get('updated_at', '')), 
-              reverse=True
-          )
-
-          # Combine: public AI/ML first, then private repos (up to 8 total)
-          featured_repos = (public_ai_ml + private_repos)[:8]
 
           print(f"\n{'='*60}")
-          print("FEATURED REPOSITORIES:")
+          print("ALL REPOSITORIES:")
           print(f"{'='*60}")
-          print(f"Public AI/ML projects: {len(public_ai_ml)}")
-          print(f"Private projects: {len(private_repos)}")
-          print(f"Total featured: {len(featured_repos)}")
+          print(f"Total projects to display: {len(display_repos)}")
           print(f"{'='*60}\n")
 
-          for repo in featured_repos:
+          for repo in display_repos:
               is_private = repo.get('private', False)
               privacy = "🔒 PRIVATE" if is_private else "🌐 Public"
               stars = repo.get('stargazers_count', 0)
@@ -135,13 +99,13 @@ jobs:
               print(f"  • {name:<40} {privacy:<15} ⭐ {stars}")
 
           # Generate markdown table
-          projects_md = "### 🚀 Featured AI/ML Projects\n\n"
+          projects_md = "### 🚀 My Projects\n\n"
           
-          if len(featured_repos) > 0:
+          if len(display_repos) > 0:
               projects_md += "| Project | Description | Language | Status | Stars |\n"
               projects_md += "|---------|-------------|----------|--------|-------|\n"
               
-              for repo in featured_repos:
+              for repo in display_repos:
                   repo_name = repo.get('name', 'Unknown')
                   repo_url = repo.get('html_url', '#')
                   description = (repo.get('description') or 'Project')
@@ -186,15 +150,15 @@ jobs:
           else:
               projects_md += "*No projects found*\n"
 
-          private_count = sum(1 for r in featured_repos if r.get('private', False))
-          public_count = len(featured_repos) - private_count
+          private_count = sum(1 for r in display_repos if r.get('private', False))
+          public_count = len(display_repos) - private_count
 
           # Get current time in IST
           ist = pytz.timezone('Asia/Kolkata')
           ist_time = datetime.now(ist)
           
           projects_md += f"\n*🤖 Auto-updated: {ist_time.strftime('%Y-%m-%d %H:%M IST')} • "
-          projects_md += f"{len(featured_repos)} projects ({public_count} public, {private_count} private)*\n"
+          projects_md += f"{len(display_repos)} projects ({public_count} public, {private_count} private)*\n"
 
           # Save to file
           with open('featured_projects.md', 'w', encoding='utf-8') as f:
@@ -210,15 +174,15 @@ jobs:
 
       - name: Update README
         run: |
-          if grep -q "<!-- FEATURED_PROJECTS_START -->" README.md && grep -q "<!-- FEATURED_PROJECTS_END -->" README.md; then
-            sed -n '1,/<!-- FEATURED_PROJECTS_START -->/p' README.md > temp_readme.md
+          if grep -q "" README.md && grep -q "" README.md; then
+            sed -n '1,//p' README.md > temp_readme.md
             cat featured_projects.md >> temp_readme.md
-            sed -n '/<!-- FEATURED_PROJECTS_END -->/,$p' README.md >> temp_readme.md
+            sed -n '//,$p' README.md >> temp_readme.md
             mv temp_readme.md README.md
             echo "✅ README updated successfully"
           else
             echo "❌ Error: Markers not found in README.md"
-            echo "Please ensure <!-- FEATURED_PROJECTS_START --> and <!-- FEATURED_PROJECTS_END --> exist in README.md"
+            echo "Please ensure and exist in README.md"
             exit 1
           fi
 
@@ -231,7 +195,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "✅ No changes to commit"
           else
-            git commit -m "🚀 Auto-update featured projects (including private repos) [$(TZ='Asia/Kolkata' date +'%Y-%m-%d %H:%M IST')]"
+            git commit -m "🚀 Auto-update all projects [$(TZ='Asia/Kolkata' date +'%Y-%m-%d %H:%M IST')]"
             git push
             echo "✅ Changes pushed successfully"
           fi
@@ -241,6 +205,6 @@ jobs:
         run: |
           echo "### ✅ Workflow Complete!" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Featured projects section updated with public and private repositories" >> $GITHUB_STEP_SUMMARY
+          echo "Projects section updated with ALL public and private repositories." >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "📅 **Updated:** $(TZ='Asia/Kolkata' date +'%Y-%m-%d %H:%M:%S IST')" >> $GITHUB_STEP_SUMMARY
