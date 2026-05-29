@@ -174,15 +174,15 @@ jobs:
 
       - name: Update README
         run: |
-          if grep -q "" README.md && grep -q "" README.md; then
-            sed -n '1,//p' README.md > temp_readme.md
+          if grep -q "<!-- FEATURED_PROJECTS_START -->" README.md && grep -q "<!-- FEATURED_PROJECTS_END -->" README.md; then
+            sed -n '1,/<!-- FEATURED_PROJECTS_START -->/p' README.md > temp_readme.md
             cat featured_projects.md >> temp_readme.md
-            sed -n '//,$p' README.md >> temp_readme.md
+            sed -n '/<!-- FEATURED_PROJECTS_END -->/,$p' README.md >> temp_readme.md
             mv temp_readme.md README.md
             echo "✅ README updated successfully"
           else
             echo "❌ Error: Markers not found in README.md"
-            echo "Please ensure and exist in README.md"
+            echo "Please ensure <!-- FEATURED_PROJECTS_START --> and <!-- FEATURED_PROJECTS_END --> exist in README.md"
             exit 1
           fi
 
