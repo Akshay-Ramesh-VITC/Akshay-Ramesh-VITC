@@ -25,6 +25,7 @@
 | **[VIT-Companion](https://github.com/Akshay-Ramesh-VITC/VIT-Companion)** | This is a lightweight browser extension designe... | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=python) | ![Public](https://img.shields.io/badge/Public-green?style=flat-square&logo=github) | ⭐ 1 |
 | **[Volume-Master-Pro](https://github.com/Akshay-Ramesh-VITC/Volume-Master-Pro)** | Project | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=python) | ![Public](https://img.shields.io/badge/Public-green?style=flat-square&logo=github) | ⭐ 1 |
 | **[Smart-Download-Manager](https://github.com/Akshay-Ramesh-VITC/Smart-Download-Manager)** | Project | ![Rust](https://img.shields.io/badge/Rust-808080?style=flat-square&logo=python) | ![Public](https://img.shields.io/badge/Public-green?style=flat-square&logo=github) | ⭐ 1 |
+| **[EURO-INR-Bro](https://github.com/Akshay-Ramesh-VITC/EURO-INR-Bro)** | Project | ![Code](https://img.shields.io/badge/Code-808080?style=flat-square&logo=python) | ![Private](https://img.shields.io/badge/Private-red?style=flat-square&logo=github) | ⭐ 0 |
 | **[JobTracker](https://github.com/Akshay-Ramesh-VITC/JobTracker)** | Project | ![Code](https://img.shields.io/badge/Code-808080?style=flat-square&logo=python) | ![Public](https://img.shields.io/badge/Public-green?style=flat-square&logo=github) | ⭐ 0 |
 | **[Toastmasters-Recruitment](https://github.com/Akshay-Ramesh-VITC/Toastmasters-Recruitment)** | Project | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=python) | ![Private](https://img.shields.io/badge/Private-red?style=flat-square&logo=github) | ⭐ 0 |
 | **[RBD-Analysis---Sleep](https://github.com/Akshay-Ramesh-VITC/RBD-Analysis---Sleep)** | Project | ![Jupyter Notebook](https://img.shields.io/badge/Jupyter%20Notebook-F37626?style=flat-square&logo=python) | ![Private](https://img.shields.io/badge/Private-red?style=flat-square&logo=github) | ⭐ 0 |
@@ -50,7 +51,7 @@
 | **[Basic-Python-Programs](https://github.com/Akshay-Ramesh-VITC/Basic-Python-Programs)** | This repository will contain basic python progr... | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python) | ![Public](https://img.shields.io/badge/Public-green?style=flat-square&logo=github) | ⭐ 0 |
 | **[SIH_2024_VIT_Career](https://github.com/Akshay-Ramesh-VITC/SIH_2024_VIT_Career)** | Project | ![Code](https://img.shields.io/badge/Code-808080?style=flat-square&logo=python) | ![Private](https://img.shields.io/badge/Private-red?style=flat-square&logo=github) | ⭐ 0 |
 
-*🤖 Auto-updated: 2026-11-24 14:57 IST • 28 projects (15 public, 13 private)*
+*🤖 Auto-updated: 2026-11-25 03:42 IST • 29 projects (15 public, 14 private)*
 <!-- FEATURED_PROJECTS_END -->
 
 <!-- Last auto-update: 2026-02-03 04:11:33 UTC -->
